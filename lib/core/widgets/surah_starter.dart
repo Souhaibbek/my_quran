@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_quran/core/utils/colors.dart';
+import 'package:my_quran/core/utils/assets.dart';
+
+import '../utils/styles.dart';
 
 class SurahStarter extends StatelessWidget {
   const SurahStarter({
