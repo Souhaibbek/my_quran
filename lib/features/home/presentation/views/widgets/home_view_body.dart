@@ -3,7 +3,7 @@ import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/styles.dart';
 import 'package:my_quran/core/widgets/custom_button.dart';
 import 'custom_appbar.dart';
-import 'custom_surah_list_item.dart';
+import 'custom_surah_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -57,25 +57,6 @@ class HomeViewBody extends StatelessWidget {
             const CustomSurahListView(),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class CustomSurahListView extends StatelessWidget {
-  const CustomSurahListView({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.separated(
-      itemBuilder: (context, index) => const CustomSuratListItem(),
-      physics: const BouncingScrollPhysics(),
-      itemCount: 20,
-      shrinkWrap: true,
-      separatorBuilder: (BuildContext context, int index) => const SizedBox(
-        height: 16,
       ),
     );
   }
