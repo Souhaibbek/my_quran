@@ -4,7 +4,7 @@ import 'package:my_quran/features/home/domain/entities/surah_entity.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<SurahEntity>> fetchSurahData();
-  Future<List<AyahEntity>> fetchAyahData();
+  Future<List<AyahEntity>> fetchAyahData(String number);
 }
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
@@ -22,8 +22,12 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   }
 
   @override
-  Future<List<AyahEntity>> fetchAyahData() {
-    // TODO: implement fetchAyahData
-    throw UnimplementedError();
+  Future<List<AyahEntity>> fetchAyahData(String number) async {
+    var data = await apiService.get(endPoint: 'surah/$number');
+    List<AyahEntity> ayahs = [];
+    for (var item in data['data']) {
+      ayahs.add(item);
+    }
+    return ayahs;
   }
 }
