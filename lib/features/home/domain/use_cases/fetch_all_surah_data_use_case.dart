@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:my_quran/core/utils/failure.dart';
+import 'package:my_quran/core/error_handling/failure.dart';
 import 'package:my_quran/core/utils/use_case.dart';
 import 'package:my_quran/features/home/domain/entities/surah_entity/surah_entity.dart';
 import 'package:my_quran/features/home/domain/repos/home_repos.dart';
