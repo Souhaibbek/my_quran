@@ -1,4 +1,4 @@
-import 'package:my_quran/features/home/domain/entities/surah_entity.dart';
+import 'package:my_quran/features/home/domain/entities/surah_entity/surah_entity.dart';
 
 class SurahModel extends SurahEntity {
   int? number;
