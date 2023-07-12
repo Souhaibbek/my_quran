@@ -17,25 +17,19 @@ class AyahEntityAdapter extends TypeAdapter<AyahEntity> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return AyahEntity(
-      ayahAr: (fields[3] as List).cast<Ayah>(),
-      nameSurahEn: fields[0] as String,
-      nameSurahTranslation: fields[1] as String,
-      numberAyah: fields[2] as int,
+      ayahText: fields[0] as String,
+      ayahNumber: fields[1] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, AyahEntity obj) {
     writer
-      ..writeByte(4)
-      ..writeByte(0)
-      ..write(obj.nameSurahEn)
-      ..writeByte(1)
-      ..write(obj.nameSurahTranslation)
       ..writeByte(2)
-      ..write(obj.numberAyah)
-      ..writeByte(3)
-      ..write(obj.ayahAr);
+      ..writeByte(0)
+      ..write(obj.ayahText)
+      ..writeByte(1)
+      ..write(obj.ayahNumber);
   }
 
   @override

@@ -5,5 +5,5 @@ import 'package:my_quran/features/home/domain/entities/surah_entity/surah_entity
 
 abstract class HomeRepo {
   Future<Either<Failure, List<SurahEntity>>> fetchAllSurahData();
-  Future<Either<Failure, List<AyahEntity>>> fetchAllAyahData(String? number);
+  Future<Either<Failure, List<AyahEntity>>> fetchAllAyahData();
 }

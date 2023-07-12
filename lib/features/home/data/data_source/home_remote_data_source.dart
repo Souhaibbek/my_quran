@@ -2,13 +2,14 @@ import 'package:hive/hive.dart';
 import 'package:my_quran/core/functions.dart';
 import 'package:my_quran/core/utils/api_service.dart';
 import 'package:my_quran/core/utils/constants.dart';
+import 'package:my_quran/features/home/data/models/ayat_model.dart';
 import 'package:my_quran/features/home/data/models/surah_model.dart';
 import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.dart';
 import 'package:my_quran/features/home/domain/entities/surah_entity/surah_entity.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<SurahEntity>> fetchSurahData();
-  Future<List<AyahEntity>> fetchAyahData(String number);
+  Future<List<AyahEntity>> fetchAyahData();
 }
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
@@ -19,15 +20,17 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   Future<List<SurahEntity>> fetchSurahData() async {
     var data = await apiService.get(endPoint: 'surah');
     List<SurahEntity> surahs = getSurahList(data);
-    saveDataToLocal(surahs, kSurahBox);
+    var box = Hive.box<SurahEntity>(kSurahBox);
+    box.addAll(surahs);
     return surahs;
   }
 
   @override
-  Future<List<AyahEntity>> fetchAyahData(String number) async {
-    var data = await apiService.get(endPoint: 'surah/$number');
+  Future<List<AyahEntity>> fetchAyahData() async {
+    var data = await apiService.get(endPoint: 'surah/1');
     List<AyahEntity> ayahs = getAyahList(data);
-    saveDataToLocal(ayahs, kAyahBox);
+    var box = Hive.box<AyahEntity>(kAyahBox);
+    box.addAll(ayahs);
     return ayahs;
   }
 
@@ -41,8 +44,8 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
 
   List<AyahEntity> getAyahList(Map<String, dynamic> data) {
     List<AyahEntity> ayahs = [];
-    for (var item in data['data']) {
-      ayahs.add(item);
+    for (var item in data['data']['ayahs']) {
+      ayahs.add(AyatModel.fromJson(item));
     }
     return ayahs;
   }

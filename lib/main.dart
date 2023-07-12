@@ -11,6 +11,8 @@ import 'package:my_quran/features/home/data/repos/home_repo_impl.dart';
 import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.dart';
 import 'package:my_quran/features/home/domain/entities/surah_entity/surah_entity.dart';
 import 'package:my_quran/features/home/domain/use_cases/fetch_all_surah_data_use_case.dart';
+import 'package:my_quran/features/home/domain/use_cases/fetch_ayah_all_data_use_case.dart';
+import 'package:my_quran/features/home/presentation/manager/fetch_ayahs_cubit/fetch_ayahs_data_cubit.dart';
 import 'package:my_quran/features/home/presentation/manager/fetch_surahs_cubit/fetch_surahs_data_cubit.dart';
 
 void main() async {
@@ -38,6 +40,13 @@ class MyApp extends StatelessWidget {
               getIt.get<HomeRepoImpl>(),
             ),
           )..fetchSurahData(),
+        ),
+        BlocProvider(
+          create: (context) => FetchAyahsDataCubit(
+            FetchAyahAllDataUseCase(
+              getIt.get<HomeRepoImpl>(),
+            ),
+          )..fetchAyahsData(),
         ),
       ],
       child: MaterialApp.router(

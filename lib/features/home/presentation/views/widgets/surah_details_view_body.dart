@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/styles.dart';
-import 'package:my_quran/core/widgets/surah_starter.dart';
+import 'package:my_quran/core/widgets/surah_starter_finisher.dart';
 
-import 'custom_ayah_list_item.dart';
+import 'ayah_list_bloc_builder.dart';
 
 class SurahDetailsViewBody extends StatelessWidget {
   const SurahDetailsViewBody({super.key});
@@ -32,26 +31,11 @@ class SurahDetailsViewBody extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            ListView.separated(
-              itemCount: 7,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              separatorBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Container(
-                    width: double.infinity,
-                    height: 1,
-                    decoration: const BoxDecoration(
-                      color: AppColors.kLightGreyContainerColor,
-                    ),
-                  ),
-                );
-              },
-              itemBuilder: (context, index) {
-                return const CustomAyahListItem();
-              },
+            const AyahListBlocBuilder(),
+            const SizedBox(
+              height: 10,
             ),
+            const SurahFinisher(),
           ],
         ),
       ),

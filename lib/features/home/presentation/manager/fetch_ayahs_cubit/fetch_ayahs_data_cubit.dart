@@ -15,10 +15,14 @@ class FetchAyahsDataCubit extends Cubit<FetchAyahsDataState> {
       emit(
         FetchAyahsDataFailure(failure.msg),
       );
+      print('//////////////////////////');
+      print(failure.msg);
     }, (ayahs) {
       emit(
         FetchAyahsDataSuccess(ayahs),
       );
+      print('//////////////////////////');
+      print('Success');
     });
   }
 }

@@ -9,30 +9,30 @@ abstract class Failure {
 class ServerFailure extends Failure {
   ServerFailure(super.msg);
 
-  factory ServerFailure.fromDioError(DioError dioError) {
+  factory ServerFailure.fromDioError(DioException dioError) {
     switch (dioError.type) {
-      case DioErrorType.connectionTimeout:
+      case DioExceptionType.connectionTimeout:
         return ServerFailure('Connection Timeout with api server');
-      case DioErrorType.sendTimeout:
+      case DioExceptionType.sendTimeout:
         return ServerFailure('Send Timeout with api server');
 
-      case DioErrorType.receiveTimeout:
+      case DioExceptionType.receiveTimeout:
         return ServerFailure('Receive Timeout with api server');
 
-      case DioErrorType.badCertificate:
+      case DioExceptionType.badCertificate:
         return ServerFailure('Bad Certificate ');
 
-      case DioErrorType.badResponse:
+      case DioExceptionType.badResponse:
         return ServerFailure.fromResponse(
             dioError.response!.statusCode, dioError.response!.data);
 
-      case DioErrorType.cancel:
+      case DioExceptionType.cancel:
         return ServerFailure('Request to api server was cancelled');
 
-      case DioErrorType.connectionError:
+      case DioExceptionType.connectionError:
         return ServerFailure('No internet Connection');
 
-      case DioErrorType.unknown:
+      case DioExceptionType.unknown:
         return ServerFailure('Ops, there was an error , please try again!');
     }
   }

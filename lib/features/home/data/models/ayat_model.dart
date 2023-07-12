@@ -1,4 +1,6 @@
-class Ayah {
+import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.dart';
+
+class AyatModel extends AyahEntity {
   int? number;
   String? text;
   int? numberInSurah;
@@ -9,7 +11,7 @@ class Ayah {
   int? hizbQuarter;
   bool? sajda;
 
-  Ayah({
+  AyatModel({
     this.number,
     this.text,
     this.numberInSurah,
@@ -19,9 +21,9 @@ class Ayah {
     this.ruku,
     this.hizbQuarter,
     this.sajda,
-  });
+  }) : super(ayahText: text!, ayahNumber: numberInSurah!);
 
-  factory Ayah.fromJson(Map<String, dynamic> json) => Ayah(
+  factory AyatModel.fromJson(Map<String, dynamic> json) => AyatModel(
         number: json['number'] as int?,
         text: json['text'] as String?,
         numberInSurah: json['numberInSurah'] as int?,
