@@ -10,9 +10,7 @@ abstract class HomeLocalDataSource {
 }
 
 class HomeLocalDataSourceImpl extends HomeLocalDataSource {
-  final ApiService apiService;
-
-  HomeLocalDataSourceImpl(this.apiService);
+  HomeLocalDataSourceImpl();
 
   @override
   List<AyahEntity> fetchAyahData(String number) {

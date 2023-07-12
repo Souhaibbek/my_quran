@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:my_quran/core/utils/assets.dart';
 import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/styles.dart';
+import 'package:my_quran/features/home/data/models/surah_model.dart';
+import 'package:my_quran/features/home/domain/entities/surah_entity/surah_entity.dart';
 
 class CustomSuratListItem extends StatelessWidget {
+  final SurahEntity surah;
   const CustomSuratListItem({
     super.key,
+    required this.surah,
   });
 
   @override
@@ -40,30 +44,30 @@ class CustomSuratListItem extends StatelessWidget {
                       children: [
                         Image.asset(ImagesAssets.index),
                         Text(
-                          '1',
+                          surah.numberOfSurah.toString(),
                           style: Styles.textPurplew500.copyWith(fontSize: 14),
                         ),
                       ],
                     ),
                     const SizedBox(
-                      width: 16,
+                      width: 10,
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Al-Fatihah',
+                          surah.nameEn,
                           style: Styles.textPurplew500,
                         ),
                         const SizedBox(height: 5),
                         Row(
                           children: [
                             Text(
-                              'Mekah'.toUpperCase(),
+                              surah.type.toUpperCase(),
                               style: Styles.detailsTextw500,
                             ),
                             Text(
-                              '  7 AYAT'.toUpperCase(),
+                              '  ${surah.length} AYA'.toUpperCase(),
                               style: Styles.detailsTextw500,
                             ),
                           ],
@@ -72,12 +76,12 @@ class CustomSuratListItem extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      'الفاتحة',
+                      surah.nameSurah.substring(8, surah.nameSurah.length),
                       textAlign: TextAlign.right,
                       style: Styles.surahTitle,
                     ),
                     const SizedBox(
-                      width: 10,
+                      width: 5,
                     ),
                   ]),
                 ),

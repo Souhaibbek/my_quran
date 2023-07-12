@@ -4,6 +4,7 @@ import 'package:my_quran/core/utils/styles.dart';
 import 'package:my_quran/core/widgets/custom_button.dart';
 import 'custom_appbar.dart';
 import 'custom_surah_list_view.dart';
+import 'surah_list_bloc_builder.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -54,7 +55,7 @@ class HomeViewBody extends StatelessWidget {
             const SizedBox(
               height: 11,
             ),
-            const CustomSurahListView(),
+            const SurahListBlocBuilder(),
           ],
         ),
       ),
