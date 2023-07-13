@@ -46,6 +46,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
                 Image.asset(
                   ImagesAssets.logo,
                   fit: BoxFit.cover,
+                  scale: 0.7,
                 ),
                 const SizedBox(
                   height: 13.0,
@@ -81,7 +82,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initSlidingAnimation() {
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 1),
     );
 
     slidingAnimation =

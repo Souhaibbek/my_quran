@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_quran/core/utils/assets.dart';
 import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/styles.dart';
-import 'package:my_quran/features/home/data/models/surah_model.dart';
 import 'package:my_quran/features/home/domain/entities/surah_entity/surah_entity.dart';
 
 class CustomSuratListItem extends StatelessWidget {

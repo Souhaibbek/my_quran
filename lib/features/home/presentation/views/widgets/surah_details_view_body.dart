@@ -6,7 +6,6 @@ import 'ayah_list_bloc_builder.dart';
 
 class SurahDetailsViewBody extends StatelessWidget {
   const SurahDetailsViewBody({super.key});
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

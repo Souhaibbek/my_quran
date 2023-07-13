@@ -37,4 +37,6 @@ abstract class Styles {
       fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.kAyahColor);
   static final blackSurahName = GoogleFonts.poppins(
       fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.kBlackColor);
+  static final hintSplash15 = GoogleFonts.amiri(
+      fontSize: 15, fontWeight: FontWeight.normal, color: AppColors.kGreyColor);
 }

@@ -40,19 +40,25 @@ class CustomAyahListItem extends StatelessWidget {
                     ),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(ImagesAssets.shareIcon),
+                      GestureDetector(
+                        onTap: () {},
+                        child: SvgPicture.asset(ImagesAssets.shareIcon),
                       ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(ImagesAssets.playIcon),
+                      const SizedBox(
+                        width: 20,
                       ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(ImagesAssets.bookmarkIcon),
+                      GestureDetector(
+                        onTap: () {},
+                        child: SvgPicture.asset(ImagesAssets.playIcon),
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: SvgPicture.asset(ImagesAssets.bookmarkIcon),
                       ),
                     ],
                   ),

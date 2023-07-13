@@ -2,7 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_quran/core/utils/service_locator.dart';
 import 'package:my_quran/features/home/data/repos/home_repo_impl.dart';
-import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.dart';
 import 'package:my_quran/features/home/domain/use_cases/fetch_ayah_all_data_use_case.dart';
 import 'package:my_quran/features/home/presentation/views/surah_details_view.dart';
 

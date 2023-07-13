@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.dart';
-
 import 'custom_ayah_list_item.dart';
 
 class CustomAyahListView extends StatelessWidget {

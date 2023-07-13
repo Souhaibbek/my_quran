@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_quran/core/utils/colors.dart';
 
 import '../../../../../core/utils/styles.dart';
 
@@ -18,9 +19,10 @@ class SlidingText extends StatelessWidget {
           return SlideTransition(
             position: slidingAnimation,
             child: Text(
-              'Read the Quran easily',
+              'ولقد يسرنا القرآن للذكر فهل من مدكر',
               textAlign: TextAlign.center,
-              style: Styles.hintText15,
+              style:
+                  Styles.hintSplash15.copyWith(color: AppColors.kPrimaryColor),
             ),
           );
         });
