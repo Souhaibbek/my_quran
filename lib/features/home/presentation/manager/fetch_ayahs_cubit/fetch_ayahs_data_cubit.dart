@@ -19,8 +19,6 @@ class FetchAyahsDataCubit extends Cubit<FetchAyahsDataState> {
       emit(
         FetchAyahsDataSuccess(ayahs),
       );
-      print('//////////////////////////');
-      print('Success');
     });
   }
 }

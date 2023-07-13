@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../manager/fetch_ayahs_cubit/fetch_ayahs_data_cubit.dart';
+import 'package:my_quran/features/home/presentation/manager/fetch_ayahs_cubit/fetch_ayahs_data_cubit.dart';
+
 import 'ayah_loading_widget.dart';
 import 'custom_ayah_list_view.dart';
 

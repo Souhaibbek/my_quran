@@ -13,7 +13,7 @@ class FetchAyahsDataFailure extends FetchAyahsDataState {
 }
 
 class FetchAyahsDataSuccess extends FetchAyahsDataState {
-  final List<AyahEntity> Ayahs;
+  final List<AyahEntity> ayahs;
 
-  FetchAyahsDataSuccess(this.Ayahs);
+  FetchAyahsDataSuccess(this.ayahs);
 }
