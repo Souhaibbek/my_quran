@@ -17,13 +17,16 @@ class HomeRepoImpl extends HomeRepo {
   });
 
   @override
-  Future<Either<Failure, List<AyahEntity>>> fetchAllAyahData() async {
+  Future<Either<Failure, List<AyahEntity>>> fetchAllAyahData(
+      int numberOfSurah) async {
     try {
-      var ayahsLocalList = homeLocalDataSource.fetchAyahData();
-      if (ayahsLocalList.isNotEmpty) {
-        return right(ayahsLocalList);
-      }
-      var ayahsRemoteList = await homeRemoteDataSource.fetchAyahData();
+      // var ayahsLocalList = homeLocalDataSource.fetchAyahData();
+
+      // if (ayahsLocalList.isNotEmpty) {
+      //   return right(ayahsLocalList);
+      // }
+      var ayahsRemoteList =
+          await homeRemoteDataSource.fetchAyahData(numberOfSurah);
       return right(ayahsRemoteList);
     } catch (e) {
       if (e is DioException) {

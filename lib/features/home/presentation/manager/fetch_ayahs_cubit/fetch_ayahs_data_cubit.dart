@@ -8,15 +8,13 @@ class FetchAyahsDataCubit extends Cubit<FetchAyahsDataState> {
   FetchAyahsDataCubit(this.fetchAyahAllDataUseCase)
       : super(FetchAyahsDataInitial());
   final FetchAyahAllDataUseCase fetchAyahAllDataUseCase;
-  Future<void> fetchAyahsData() async {
+  Future<void> fetchAyahsData(int numberInSurah) async {
     emit(FetchAyahsDataLoading());
-    var result = await fetchAyahAllDataUseCase.call();
+    var result = await fetchAyahAllDataUseCase.call(numberInSurah);
     result.fold((failure) {
       emit(
         FetchAyahsDataFailure(failure.msg),
       );
-      print('//////////////////////////');
-      print(failure.msg);
     }, (ayahs) {
       emit(
         FetchAyahsDataSuccess(ayahs),

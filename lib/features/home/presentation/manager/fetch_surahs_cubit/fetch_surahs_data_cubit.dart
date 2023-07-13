@@ -8,6 +8,8 @@ class FetchSurahsDataCubit extends Cubit<FetchSurahsDataState> {
   FetchSurahsDataCubit(this.fetchAllSurahDataUseCase)
       : super(FetchSurahsDataInitial());
   final FetchAllSurahDataUseCase fetchAllSurahDataUseCase;
+  DateTime today = DateTime.now();
+
   Future<void> fetchSurahData() async {
     emit(FetchSurahsDataLoading());
     var result = await fetchAllSurahDataUseCase.call();

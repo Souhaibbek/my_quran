@@ -1,5 +1,4 @@
 import 'package:hive/hive.dart';
-import 'package:my_quran/core/functions.dart';
 import 'package:my_quran/core/utils/api_service.dart';
 import 'package:my_quran/core/utils/constants.dart';
 import 'package:my_quran/features/home/data/models/ayat_model.dart';
@@ -9,7 +8,7 @@ import 'package:my_quran/features/home/domain/entities/surah_entity/surah_entity
 
 abstract class HomeRemoteDataSource {
   Future<List<SurahEntity>> fetchSurahData();
-  Future<List<AyahEntity>> fetchAyahData();
+  Future<List<AyahEntity>> fetchAyahData(int numberOfSurah);
 }
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
@@ -26,8 +25,8 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   }
 
   @override
-  Future<List<AyahEntity>> fetchAyahData() async {
-    var data = await apiService.get(endPoint: 'surah/1');
+  Future<List<AyahEntity>> fetchAyahData(int numberOfSurah) async {
+    var data = await apiService.get(endPoint: 'surah/$numberOfSurah');
     List<AyahEntity> ayahs = getAyahList(data);
     var box = Hive.box<AyahEntity>(kAyahBox);
     box.addAll(ayahs);

@@ -17,7 +17,8 @@ class CustomSurahListView extends StatelessWidget {
     return ListView.separated(
       itemBuilder: (context, index) => GestureDetector(
           onTap: () {
-            GoRouter.of(context).push(AppRouter.kSurahDetailsView);
+            GoRouter.of(context).push(AppRouter.kSurahDetailsView,
+                extra: surahs[index].numberOfSurah);
           },
           child: CustomSuratListItem(
             surah: surahs[index],

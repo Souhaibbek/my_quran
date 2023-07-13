@@ -9,7 +9,7 @@ class AyatModel extends AyahEntity {
   int? page;
   int? ruku;
   int? hizbQuarter;
-  bool? sajda;
+  // bool? sajda;
 
   AyatModel({
     this.number,
@@ -20,7 +20,7 @@ class AyatModel extends AyahEntity {
     this.page,
     this.ruku,
     this.hizbQuarter,
-    this.sajda,
+    // this.sajda,
   }) : super(ayahText: text!, ayahNumber: numberInSurah!);
 
   factory AyatModel.fromJson(Map<String, dynamic> json) => AyatModel(
@@ -32,7 +32,7 @@ class AyatModel extends AyahEntity {
         page: json['page'] as int?,
         ruku: json['ruku'] as int?,
         hizbQuarter: json['hizbQuarter'] as int?,
-        sajda: json['sajda'] as bool?,
+        // sajda: json['sajda'] as bool?,
       );
 
   Map<String, dynamic> toJson() => {
@@ -44,6 +44,6 @@ class AyatModel extends AyahEntity {
         'page': page,
         'ruku': ruku,
         'hizbQuarter': hizbQuarter,
-        'sajda': sajda,
+        // 'sajda': sajda,
       };
 }

@@ -41,13 +41,6 @@ class MyApp extends StatelessWidget {
             ),
           )..fetchSurahData(),
         ),
-        BlocProvider(
-          create: (context) => FetchAyahsDataCubit(
-            FetchAyahAllDataUseCase(
-              getIt.get<HomeRepoImpl>(),
-            ),
-          )..fetchAyahsData(),
-        ),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
