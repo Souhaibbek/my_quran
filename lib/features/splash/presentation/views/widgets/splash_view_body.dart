@@ -63,7 +63,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
           Align(
             alignment: Alignment.bottomCenter,
             child: CustomButton(
-              text: 'Read now',
+              text: 'Welcome',
               height: 53,
               fontSize: 15,
               onPressed: () {
