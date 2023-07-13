@@ -26,7 +26,7 @@ class SurahDetailsViewBody extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const SurahStarter(),
+            // const SurahStarter(),
             const SizedBox(
               height: 10,
             ),

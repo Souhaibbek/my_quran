@@ -15,7 +15,7 @@ class AyahLoadingWidget extends StatelessWidget {
       direction: ShimmerDirection.rtl,
       period: const Duration(seconds: 3),
       child: ListView.separated(
-        itemCount: 3,
+        itemCount: 7,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         separatorBuilder: (context, index) {

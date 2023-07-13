@@ -52,7 +52,7 @@ class CustomSuratListItem extends StatelessWidget {
                       width: 10,
                     ),
                     Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
                           surah.nameEn,
