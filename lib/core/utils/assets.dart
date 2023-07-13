@@ -5,4 +5,6 @@ class ImagesAssets {
   static const shareIcon = 'assets/img/shareIcon.svg';
   static const bookmarkIcon = 'assets/img/bookmarkIcon.svg';
   static const playIcon = 'assets/img/playIcon.svg';
+  static const backgroundAya = 'assets/img/backgroundaya.png';
+  static const besmellah = 'assets/img/besmellah.png';
 }

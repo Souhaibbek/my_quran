@@ -67,7 +67,7 @@ class CustomSuratListItem extends StatelessWidget {
                               style: Styles.detailsTextw500,
                             ),
                             Text(
-                              '  ${surah.length} AYA'.toUpperCase(),
+                              '  ${surah.length} Verses'.toUpperCase(),
                               style: Styles.detailsTextw500,
                             ),
                           ],

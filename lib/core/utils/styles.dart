@@ -39,4 +39,6 @@ abstract class Styles {
       fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.kBlackColor);
   static final hintSplash15 = GoogleFonts.amiri(
       fontSize: 15, fontWeight: FontWeight.normal, color: AppColors.kGreyColor);
+  static final details14w500 = GoogleFonts.poppins(
+      fontSize: 14, fontWeight: FontWeight.w500, color: AppColors.kWhiteColor);
 }
