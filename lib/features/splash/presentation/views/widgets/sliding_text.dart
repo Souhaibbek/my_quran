@@ -21,8 +21,9 @@ class SlidingText extends StatelessWidget {
             child: Text(
               'ولقد يسرنا القرآن للذكر فهل من مدكر',
               textAlign: TextAlign.center,
-              style:
-                  Styles.hintSplash15.copyWith(color: AppColors.kPrimaryColor),
+              style: Styles.hintSplash15.copyWith(
+                color: AppColors.kPrimaryColor,
+              ),
             ),
           );
         });

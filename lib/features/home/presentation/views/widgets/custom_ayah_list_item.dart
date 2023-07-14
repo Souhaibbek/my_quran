@@ -4,6 +4,7 @@ import 'package:my_quran/core/utils/assets.dart';
 import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/styles.dart';
 import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.dart';
+import 'package:sizer/sizer.dart';
 
 class CustomAyahListItem extends StatelessWidget {
   final AyahEntity ayah;
@@ -29,14 +30,16 @@ class CustomAyahListItem extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CircleAvatar(
-                    radius: 12,
-                    backgroundColor: AppColors.kPrimaryColor,
-                    child: Text(
-                      ayah.ayahNumber.toString(),
-                      textAlign: TextAlign.center,
-                      style: Styles.title16W700
-                          .copyWith(color: AppColors.kWhiteColor),
+                  SizedBox(
+                    height: 20.h,
+                    child: CircleAvatar(
+                      backgroundColor: AppColors.kPrimaryColor,
+                      child: Text(
+                        ayah.ayahNumber.toString(),
+                        textAlign: TextAlign.center,
+                        style: Styles.title16W700
+                            .copyWith(color: AppColors.kWhiteColor),
+                      ),
                     ),
                   ),
                   Row(
@@ -78,10 +81,10 @@ class CustomAyahListItem extends StatelessWidget {
                 textAlign: TextAlign.right,
                 textDirection: TextDirection.rtl,
               ),
-              Text(
-                '[All] praise is [due] to Allah, Lord of the worlds -',
-                style: Styles.ayahTextEn,
-              ),
+              // Text(
+              //   '[All] praise is [due] to Allah, Lord of the worlds -',
+              //   style: Styles.ayahTextEn,
+              // ),
             ],
           ),
         ],

@@ -15,7 +15,7 @@ class CustomAppBar extends StatelessWidget {
       stream: Stream.periodic(const Duration(seconds: 1)),
       builder: (context, snapshot) {
         return SizedBox(
-          height: MediaQuery.of(context).size.height * 0.25,
+          // height: MediaQuery.of(context).size.height / 2.5,
           child: Stack(
             children: [
               Padding(
@@ -25,12 +25,12 @@ class CustomAppBar extends StatelessWidget {
                   child: Image.asset(
                     ImagesAssets.homeImg1,
                     width: MediaQuery.of(context).size.width * 0.55,
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.5,
+                width: MediaQuery.of(context).size.width * 0.6,
                 child: Align(
                   alignment: AlignmentDirectional.centerStart,
                   child: Column(

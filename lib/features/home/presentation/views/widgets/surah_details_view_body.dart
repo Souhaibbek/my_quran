@@ -11,6 +11,7 @@ class SurahDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const ClampingScrollPhysics(),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 20),
         child: Column(
@@ -18,14 +19,14 @@ class SurahDetailsViewBody extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             Container(
-              height: MediaQuery.of(context).size.height * 0.3,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                image: AssetImage(
-                  ImagesAssets.backgroundAya,
-                ),
-                fit: BoxFit.fill,
-              )),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  image: const DecorationImage(
+                    image: AssetImage(
+                      ImagesAssets.backgroundAya,
+                    ),
+                    fit: BoxFit.cover,
+                  )),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

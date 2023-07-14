@@ -14,7 +14,7 @@ class CustomSuratListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 20.0),
+      padding: const EdgeInsets.only(right: 10.0),
       child: SizedBox(
         height: 68,
         width: MediaQuery.of(context).size.width,

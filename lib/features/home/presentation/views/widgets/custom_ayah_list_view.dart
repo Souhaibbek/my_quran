@@ -18,7 +18,7 @@ class CustomAyahListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       separatorBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          padding: const EdgeInsets.symmetric(vertical: 5.0),
           child: Container(
             width: double.infinity,
             height: 1,

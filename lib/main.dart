@@ -12,6 +12,7 @@ import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.d
 import 'package:my_quran/features/home/domain/entities/surah_entity/surah_entity.dart';
 import 'package:my_quran/features/home/domain/use_cases/fetch_all_surah_data_use_case.dart';
 import 'package:my_quran/features/home/presentation/manager/fetch_surahs_cubit/fetch_surahs_data_cubit.dart';
+import 'package:sizer/sizer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,16 +41,21 @@ class MyApp extends StatelessWidget {
           )..fetchSurahData(),
         ),
       ],
-      child: MaterialApp.router(
-        routerConfig: AppRouter.router,
-        title: 'My Quran',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          scaffoldBackgroundColor: AppColors.kWhiteColor,
-          textTheme: GoogleFonts.latoTextTheme(
-            Theme.of(context).textTheme,
-          ),
-        ),
+      child: Sizer(
+        builder: (BuildContext context, Orientation orientation,
+            DeviceType deviceType) {
+          return MaterialApp.router(
+            routerConfig: AppRouter.router,
+            title: 'My Quran',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              scaffoldBackgroundColor: AppColors.kWhiteColor,
+              textTheme: GoogleFonts.latoTextTheme(
+                Theme.of(context).textTheme,
+              ),
+            ),
+          );
+        },
       ),
     );
   }
