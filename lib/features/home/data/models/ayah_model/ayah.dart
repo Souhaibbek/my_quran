@@ -20,8 +20,8 @@ class Ayah {
   int? ruku;
   @HiveField(7)
   int? hizbQuarter;
-  @HiveField(8)
-  bool? sajda;
+  // @HiveField(8)
+  // bool? sajda;
 
   Ayah({
     this.number,
@@ -32,7 +32,7 @@ class Ayah {
     this.page,
     this.ruku,
     this.hizbQuarter,
-    this.sajda,
+    // this.sajda,
   });
 
   factory Ayah.fromJson(Map<String, dynamic> json) => Ayah(
@@ -44,7 +44,7 @@ class Ayah {
         page: json['page'] as int?,
         ruku: json['ruku'] as int?,
         hizbQuarter: json['hizbQuarter'] as int?,
-        sajda: json['sajda'] as bool?,
+        // sajda: json['sajda'] as bool?,
       );
 
   Map<String, dynamic> toJson() => {
@@ -56,6 +56,6 @@ class Ayah {
         'page': page,
         'ruku': ruku,
         'hizbQuarter': hizbQuarter,
-        'sajda': sajda,
+        // 'sajda': sajda,
       };
 }
