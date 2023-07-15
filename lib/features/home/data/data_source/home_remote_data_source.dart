@@ -1,7 +1,9 @@
+import 'dart:developer';
+
 import 'package:hive/hive.dart';
 import 'package:my_quran/core/utils/api_service.dart';
 import 'package:my_quran/core/utils/constants.dart';
-import 'package:my_quran/features/home/data/models/ayat_model.dart';
+import 'package:my_quran/features/home/data/models/ayah_model/ayah_model.dart';
 import 'package:my_quran/features/home/data/models/surah_model.dart';
 import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.dart';
 import 'package:my_quran/features/home/domain/entities/surah_entity/surah_entity.dart';
@@ -27,9 +29,14 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   @override
   Future<List<AyahEntity>> fetchAyahData(int numberOfSurah) async {
     var data = await apiService.get(endPoint: 'surah/$numberOfSurah');
-    List<AyahEntity> ayahs = getAyahList(data);
-    var box = Hive.box<AyahEntity>(kAyahBox);
-    box.addAll(ayahs);
+    List<AyahEntity> ayahs = [];
+    log('////////1////////');
+    log(data['code'].toString());
+    data.forEach((key, value) {
+      ayahs.add(AyahModel.fromJson(data['data']));
+    });
+    // var box = Hive.box<AyahEntity>(kAyahBox);
+    // box.addAll(ayahs);
     return ayahs;
   }
 
@@ -43,8 +50,8 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
 
   List<AyahEntity> getAyahList(Map<String, dynamic> data) {
     List<AyahEntity> ayahs = [];
-    for (var item in data['data']['ayahs']) {
-      ayahs.add(AyatModel.fromJson(item));
+    for (var item in data['data']) {
+      ayahs.add(AyahModel.fromJson(item));
     }
     return ayahs;
   }

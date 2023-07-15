@@ -8,7 +8,6 @@ import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/constants.dart';
 import 'package:my_quran/core/utils/service_locator.dart';
 import 'package:my_quran/features/home/data/repos/home_repo_impl.dart';
-import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.dart';
 import 'package:my_quran/features/home/domain/entities/surah_entity/surah_entity.dart';
 import 'package:my_quran/features/home/domain/use_cases/fetch_all_surah_data_use_case.dart';
 import 'package:my_quran/features/home/presentation/manager/fetch_surahs_cubit/fetch_surahs_data_cubit.dart';
@@ -20,8 +19,8 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(SurahEntityAdapter());
   await Hive.openBox<SurahEntity>(kSurahBox);
-  Hive.registerAdapter(AyahEntityAdapter());
-  await Hive.openBox<AyahEntity>(kAyahBox);
+  // Hive.registerAdapter(AyahEntityAdapter());
+  // await Hive.openBox<AyahEntity>(kAyahBox);
   Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }

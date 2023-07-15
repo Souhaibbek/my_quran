@@ -3,11 +3,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:my_quran/core/utils/assets.dart';
 import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/styles.dart';
+import 'package:my_quran/features/home/data/models/ayah_model/ayah.dart';
 import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomAyahListItem extends StatelessWidget {
-  final AyahEntity ayah;
+  final Ayah ayah;
   const CustomAyahListItem({
     super.key,
     required this.ayah,
@@ -35,7 +36,7 @@ class CustomAyahListItem extends StatelessWidget {
                     child: CircleAvatar(
                       backgroundColor: AppColors.kPrimaryColor,
                       child: Text(
-                        ayah.ayahNumber.toString(),
+                        ayah.numberInSurah.toString(),
                         textAlign: TextAlign.center,
                         style: Styles.title16W700
                             .copyWith(color: AppColors.kWhiteColor),
@@ -76,7 +77,7 @@ class CustomAyahListItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                ayah.ayahText,
+                ayah.text.toString(),
                 style: Styles.ayahTextAr,
                 textAlign: TextAlign.right,
                 textDirection: TextDirection.rtl,
