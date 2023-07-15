@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:my_quran/core/error_handling/failure.dart';
@@ -20,11 +22,13 @@ class HomeRepoImpl extends HomeRepo {
   Future<Either<Failure, List<AyahEntity>>> fetchAllAyahData(
       int numberOfSurah) async {
     try {
-      // var ayahsLocalList = homeLocalDataSource.fetchAyahData();
+      var ayahsLocalList = homeLocalDataSource.fetchAyahData();
+      log('checkLOcal');
 
-      // if (ayahsLocalList.isNotEmpty) {
-      //   return right(ayahsLocalList);
-      // }
+      if (ayahsLocalList.isNotEmpty && ayahsLocalList[0].num == numberOfSurah) {
+        log('foundlOcal');
+        return right(ayahsLocalList);
+      }
       var ayahsRemoteList =
           await homeRemoteDataSource.fetchAyahData(numberOfSurah);
       return right(ayahsRemoteList);

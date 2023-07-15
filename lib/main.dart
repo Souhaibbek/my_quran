@@ -13,14 +13,20 @@ import 'package:my_quran/features/home/domain/use_cases/fetch_all_surah_data_use
 import 'package:my_quran/features/home/presentation/manager/fetch_surahs_cubit/fetch_surahs_data_cubit.dart';
 import 'package:sizer/sizer.dart';
 
+import 'features/home/data/models/ayah_model/ayah.dart';
+import 'features/home/domain/entities/ayah_entity/ayah_entity.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupServiceLocator();
   await Hive.initFlutter();
+  Hive.registerAdapter(AyahEntityAdapter());
+
   Hive.registerAdapter(SurahEntityAdapter());
+  Hive.registerAdapter(AyahAdapter());
   await Hive.openBox<SurahEntity>(kSurahBox);
-  // Hive.registerAdapter(AyahEntityAdapter());
-  // await Hive.openBox<AyahEntity>(kAyahBox);
+  await Hive.openBox<AyahEntity>(kAyahBox);
+
   Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }

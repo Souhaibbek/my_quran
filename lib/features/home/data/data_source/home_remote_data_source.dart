@@ -30,13 +30,13 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   Future<List<AyahEntity>> fetchAyahData(int numberOfSurah) async {
     var data = await apiService.get(endPoint: 'surah/$numberOfSurah');
     List<AyahEntity> ayahs = [];
-    log('////////1////////');
-    log(data['code'].toString());
     data.forEach((key, value) {
       ayahs.add(AyahModel.fromJson(data['data']));
     });
-    // var box = Hive.box<AyahEntity>(kAyahBox);
-    // box.addAll(ayahs);
+    var box = Hive.box<AyahEntity>(kAyahBox);
+    box.addAll(ayahs);
+    log('addRemote');
+
     return ayahs;
   }
 
@@ -50,9 +50,9 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
 
   List<AyahEntity> getAyahList(Map<String, dynamic> data) {
     List<AyahEntity> ayahs = [];
-    for (var item in data['data']) {
-      ayahs.add(AyahModel.fromJson(item));
-    }
+    data.forEach((key, value) {
+      ayahs.add(AyahModel.fromJson(data['data']));
+    });
     return ayahs;
   }
 }

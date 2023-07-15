@@ -1,22 +1,25 @@
 import 'package:hive/hive.dart';
 import 'package:my_quran/features/home/data/models/ayah_model/ayah.dart';
 
+part 'ayah_entity.g.dart';
+
 @HiveType(typeId: 1)
 class AyahEntity {
   @HiveField(0)
-  int num;
+  final String type;
   @HiveField(1)
-  String nameAr;
+  final String nameAr;
   @HiveField(2)
-  String nameEn;
+  final String nameEn;
   @HiveField(3)
-  String nameEtr;
+  final String nameEtr;
   @HiveField(4)
-  String type;
+  final int numOfAyahs;
   @HiveField(5)
-  int numOfAyahs;
+  final int num;
+
   @HiveField(6)
-  List<Ayah> ayahsList;
+  final List<Ayah> ayahsList;
 
   AyahEntity({
     required this.num,
