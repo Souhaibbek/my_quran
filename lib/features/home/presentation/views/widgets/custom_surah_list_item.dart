@@ -41,7 +41,9 @@ class CustomSuratListItem extends StatelessWidget {
                     Stack(
                       alignment: AlignmentDirectional.center,
                       children: [
-                        Image.asset(ImagesAssets.index),
+                        Image.asset(
+                          ImagesAssets.index,
+                        ),
                         Text(
                           surah.numberOfSurah.toString(),
                           style: Styles.textPurplew500.copyWith(fontSize: 14),

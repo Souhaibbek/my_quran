@@ -55,9 +55,6 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               scaffoldBackgroundColor: AppColors.kWhiteColor,
-              textTheme: GoogleFonts.latoTextTheme(
-                Theme.of(context).textTheme,
-              ),
             ),
           );
         },
