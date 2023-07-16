@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:hive/hive.dart';
 import 'package:my_quran/core/utils/api_service.dart';
 import 'package:my_quran/core/utils/constants.dart';

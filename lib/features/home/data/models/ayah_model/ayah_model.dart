@@ -1,6 +1,6 @@
 import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.dart';
 
-import 'ayah.dart';
+import 'ayah/ayah.dart';
 import 'edition.dart';
 
 class AyahModel extends AyahEntity {

@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:my_quran/core/utils/assets.dart';
 import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/styles.dart';
-import 'package:my_quran/features/home/data/models/ayah_model/ayah.dart';
+import 'package:my_quran/features/home/data/models/ayah_model/ayah/ayah.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomAyahListItem extends StatelessWidget {
