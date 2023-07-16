@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:my_quran/core/utils/assets.dart';
+import 'package:my_quran/core/utils/constants.dart';
 import 'package:my_quran/core/utils/styles.dart';
 import 'package:my_quran/core/widgets/custom_button.dart';
 
@@ -62,11 +64,14 @@ class CustomAppBar extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 30),
-                      const CustomButton(
+                      CustomButton(
                         text: 'Shubuh 4:17 AM',
                         radius: 7.0,
                         height: 30,
                         width: 120,
+                        onPressed: () {
+                          GoRouter.of(context).push(kPrayerView);
+                        },
                       ),
                     ],
                   ),

@@ -7,4 +7,5 @@ class ImagesAssets {
   static const playIcon = 'assets/img/playIcon.svg';
   static const backgroundAya = 'assets/img/backgroundAya.png';
   static const besmellah = 'assets/img/besmellah.png';
+  static const prayBackground = 'assets/img/prayBackground.png';
 }

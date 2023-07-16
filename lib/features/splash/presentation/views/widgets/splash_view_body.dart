@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_quran/core/utils/assets.dart';
+import 'package:my_quran/core/utils/constants.dart';
 import 'package:my_quran/core/utils/styles.dart';
 import 'package:my_quran/core/widgets/custom_button.dart';
 import 'package:my_quran/features/splash/presentation/views/widgets/sliding_text.dart';
-
-import '../../../../../core/utils/app_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -66,7 +65,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
               height: 53,
               fontSize: 15,
               onPressed: () {
-                GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
+                GoRouter.of(context).pushReplacement(kHomeView);
               },
             ),
           ),
