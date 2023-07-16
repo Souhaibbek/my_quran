@@ -46,7 +46,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
                 Image.asset(
                   ImagesAssets.logo,
                   fit: BoxFit.cover,
-                  scale: 0.7,
                 ),
                 const SizedBox(
                   height: 13.0,

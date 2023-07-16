@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_quran/features/home/presentation/manager/fetch_surahs_cubit/fetch_surahs_data_cubit.dart';
 
 import 'custom_surah_list_view.dart';
+import 'surah_loading_widget.dart';
 
 class SurahListBlocBuilder extends StatelessWidget {
   const SurahListBlocBuilder({
@@ -20,7 +21,7 @@ class SurahListBlocBuilder extends StatelessWidget {
         } else if (state is FetchSurahsDataFailure) {
           return Text(state.errMsg);
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: SurahLoadingWidget());
         }
       },
     );
