@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:hive/hive.dart';
 import 'package:my_quran/core/utils/constants.dart';
 import 'package:my_quran/features/home/domain/entities/ayah_entity/ayah_entity.dart';
