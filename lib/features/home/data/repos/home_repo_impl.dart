@@ -23,11 +23,15 @@ class HomeRepoImpl extends HomeRepo {
       int numberOfSurah) async {
     try {
       var ayahsLocalList = homeLocalDataSource.fetchAyahData();
-      log('checkLOcal');
 
-      if (ayahsLocalList.isNotEmpty && ayahsLocalList[0].num == numberOfSurah) {
-        log('foundlOcal');
-        return right(ayahsLocalList);
+      if (ayahsLocalList.isNotEmpty) {
+        for (var element in ayahsLocalList) {
+          if (element.num == numberOfSurah) {
+            List<AyahEntity> list = [];
+            list.add(element);
+            return right(list);
+          }
+        }
       }
       var ayahsRemoteList =
           await homeRemoteDataSource.fetchAyahData(numberOfSurah);

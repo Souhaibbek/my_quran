@@ -11,6 +11,6 @@ class FetchAyahAllDataUseCase extends UseCase<List<AyahEntity>, int> {
 
   @override
   Future<Either<Failure, List<AyahEntity>>> call([int? param]) async {
-    return await homeRepo.fetchAllAyahData(param ?? 2);
+    return await homeRepo.fetchAllAyahData(param!);
   }
 }

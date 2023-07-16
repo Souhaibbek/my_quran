@@ -15,7 +15,6 @@ class HomeLocalDataSourceImpl extends HomeLocalDataSource {
 
   @override
   List<AyahEntity> fetchAyahData() {
-    log('fetcLOcal');
     var box = Hive.box<AyahEntity>(kAyahBox);
     return box.values.toList();
   }

@@ -34,8 +34,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
       ayahs.add(AyahModel.fromJson(data['data']));
     });
     var box = Hive.box<AyahEntity>(kAyahBox);
-    box.addAll(ayahs);
-    log('addRemote');
+    box.add(ayahs.first);
 
     return ayahs;
   }
