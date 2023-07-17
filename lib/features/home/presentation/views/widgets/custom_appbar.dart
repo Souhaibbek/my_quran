@@ -65,7 +65,7 @@ class CustomAppBar extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   CustomButton(
-                    text: 'Prayer times',
+                    text: 'Prayer Times',
                     radius: 7.0,
                     height: 30,
                     width: 120,
