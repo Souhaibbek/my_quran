@@ -71,4 +71,19 @@ abstract class Styles {
       fontWeight: FontWeight.w500,
       fontFamily: kPoppins,
       color: AppColors.kWhiteColor);
+  static final titleBold20 = TextStyle(
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w700,
+      fontFamily: kPoppins,
+      color: AppColors.kWhiteColor);
+  static final titleBold16Black = TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w700,
+      fontFamily: kPoppins,
+      color: AppColors.kBlackColor);
+  static final text13w700 = TextStyle(
+      fontSize: 13.sp,
+      fontWeight: FontWeight.w700,
+      fontFamily: kPoppins,
+      color: AppColors.kWhiteColor);
 }

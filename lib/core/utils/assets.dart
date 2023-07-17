@@ -8,4 +8,12 @@ class ImagesAssets {
   static const backgroundAya = 'assets/img/backgroundAya.png';
   static const besmellah = 'assets/img/besmellah.png';
   static const prayBackground = 'assets/img/prayBackground.png';
+
+  // PrayersIcons
+  static const fajr = 'assets/icons/fajr.png';
+  static const sunrise = 'assets/icons/sunrise.png';
+  static const dhuhr = 'assets/icons/dhuhr.png';
+  static const asr = 'assets/icons/asr.png';
+  static const maghreb = 'assets/icons/maghreb.png';
+  static const isha = 'assets/icons/isha.png';
 }
