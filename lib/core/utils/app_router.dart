@@ -4,7 +4,7 @@ import 'package:my_quran/core/utils/service_locator.dart';
 import 'package:my_quran/features/home/data/repos/home_repo_impl.dart';
 import 'package:my_quran/features/home/domain/use_cases/fetch_ayah_all_data_use_case.dart';
 import 'package:my_quran/features/home/presentation/views/surah_details_view.dart';
-import 'package:my_quran/features/prayer/prayer_view.dart';
+import 'package:my_quran/features/prayer/presentation/views/prayer_view.dart';
 
 import '../../Features/Splash/presentation/views/splash_view.dart';
 import '../../features/home/presentation/manager/fetch_ayahs_cubit/fetch_ayahs_data_cubit.dart';
