@@ -8,6 +8,7 @@ import 'package:my_quran/features/prayer/manager/cubit/prayer_time_cubit.dart';
 import 'package:sizer/sizer.dart';
 import 'custom_prayer_appbar.dart';
 import 'custom_prayer_item.dart';
+import 'custom_prayer_loading.dart';
 
 class PrayerViewBody extends StatelessWidget {
   const PrayerViewBody({super.key});
@@ -98,9 +99,7 @@ class PrayerViewBody extends StatelessWidget {
             child: Text(state.errMsg),
           );
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const CustomPrayerLoading();
         }
       },
     );
