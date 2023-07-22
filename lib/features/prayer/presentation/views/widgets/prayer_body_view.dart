@@ -17,10 +17,14 @@ class PrayerViewBody extends StatelessWidget {
     return BlocBuilder<PrayerTimeCubit, PrayerTimeState>(
       builder: (context, state) {
         if (state is PrayerTimeSuccess) {
+          var placeMarks = BlocProvider.of<PrayerTimeCubit>(context).placemarks;
+
           return SafeArea(
             child: Column(
               children: [
-                const CustomPrayerTimesAppBar(),
+                CustomPrayerTimesAppBar(
+                  placeMark: placeMarks,
+                ),
                 SizedBox(
                   child: Column(
                     children: [

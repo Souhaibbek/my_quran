@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:intl/intl.dart';
 import 'package:my_quran/core/utils/assets.dart';
 import 'package:my_quran/core/utils/colors.dart';
@@ -8,8 +9,9 @@ import 'package:sizer/sizer.dart';
 class CustomPrayerTimesAppBar extends StatelessWidget {
   const CustomPrayerTimesAppBar({
     super.key,
+    required this.placeMark,
   });
-
+  final List<Placemark>? placeMark;
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
@@ -40,13 +42,15 @@ class CustomPrayerTimesAppBar extends StatelessWidget {
                         style: Styles.titleBold20,
                       ),
                       Text(
-                        'Tataouine',
+                        placeMark?[0].country.toString() ??
+                            DateFormat('EEEE').format(DateTime.now()),
                         style: Styles.titleBold20.copyWith(
                           fontSize: 15.sp,
                         ),
                       ),
                       Text(
-                        'Tunisia',
+                        placeMark?[0].administrativeArea.toString() ??
+                            DateFormat('d MMMM').format(DateTime.now()),
                         style: Styles.titleBold20.copyWith(
                           fontSize: 15.sp,
                         ),
