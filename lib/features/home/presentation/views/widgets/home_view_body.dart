@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/styles.dart';
 import 'package:my_quran/core/widgets/custom_button.dart';
+import 'package:my_quran/features/home/presentation/views/widgets/adeiah_list_view.dart';
 import 'custom_appbar.dart';
-import 'surah_list_bloc_builder.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -54,7 +54,8 @@ class HomeViewBody extends StatelessWidget {
             const SizedBox(
               height: 11,
             ),
-            const SurahListBlocBuilder(),
+            // const SurahListBlocBuilder(),
+            const AdeiahListView(),
           ],
         ),
       ),
