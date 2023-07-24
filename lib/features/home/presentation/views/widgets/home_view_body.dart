@@ -2,12 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/styles.dart';
 import 'package:my_quran/core/widgets/custom_button.dart';
-import 'package:my_quran/features/home/presentation/views/widgets/adeiah_list_view.dart';
+import 'adhkar/adhkar_list_view.dart';
 import 'custom_appbar.dart';
+import 'surah/surah_list_bloc_builder.dart';
 
-class HomeViewBody extends StatelessWidget {
+class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
 
+  @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
+  int currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -29,33 +36,59 @@ class HomeViewBody extends StatelessWidget {
             const SizedBox(
               height: 11,
             ),
-            const Row(
+            Row(
               children: [
                 CustomButton(
+                  onPressed: () {
+                    setState(() {
+                      currentPage = 0;
+                    });
+                  },
                   text: 'SURAH',
                   radius: 20,
                   height: 37,
                   width: 73,
+                  borderColor: currentPage == 0
+                      ? AppColors.kPrimaryColor
+                      : AppColors.kBlackColor,
+                  backgroundColor: currentPage == 0
+                      ? AppColors.kPrimaryColor
+                      : AppColors.kWhiteColor,
+                  textColor: currentPage == 0
+                      ? AppColors.kWhiteColor
+                      : AppColors.kBlackColor,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 11,
                 ),
                 CustomButton(
-                  text: 'Duaa',
+                  onPressed: () {
+                    setState(() {
+                      currentPage = 1;
+                    });
+                  },
+                  text: 'DOAA',
                   radius: 20,
                   height: 37,
                   width: 73,
-                  borderColor: AppColors.kBlackColor,
-                  backgroundColor: AppColors.kWhiteColor,
-                  textColor: AppColors.kBlackColor,
+                  borderColor: currentPage == 1
+                      ? AppColors.kPrimaryColor
+                      : AppColors.kBlackColor,
+                  backgroundColor: currentPage == 1
+                      ? AppColors.kPrimaryColor
+                      : AppColors.kWhiteColor,
+                  textColor: currentPage == 1
+                      ? AppColors.kWhiteColor
+                      : AppColors.kBlackColor,
                 ),
               ],
             ),
             const SizedBox(
               height: 11,
             ),
-            // const SurahListBlocBuilder(),
-            const AdeiahListView(),
+            (currentPage == 1)
+                ? const AdhkarListView()
+                : const SurahListBlocBuilder(),
           ],
         ),
       ),

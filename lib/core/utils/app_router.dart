@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:my_quran/core/utils/service_locator.dart';
 import 'package:my_quran/features/home/data/repos/home_repo_impl.dart';
 import 'package:my_quran/features/home/domain/use_cases/fetch_ayah_all_data_use_case.dart';
+import 'package:my_quran/features/home/presentation/views/adhkar_details_view.dart';
 import 'package:my_quran/features/home/presentation/views/surah_details_view.dart';
 import 'package:my_quran/features/prayer/presentation/views/prayer_view.dart';
 
@@ -35,6 +36,12 @@ abstract class AppRouter {
             ),
           ),
           child: SurahDetailsView(numberOfSurah: state.extra as int),
+        ),
+      ),
+      GoRoute(
+        path: kAdhkarDetailsView,
+        builder: (context, state) => AdhkarDetailsView(
+          index: state.extra as int,
         ),
       ),
     ],

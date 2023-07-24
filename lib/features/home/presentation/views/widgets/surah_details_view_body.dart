@@ -4,10 +4,10 @@ import 'package:my_quran/core/utils/assets.dart';
 import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/styles.dart';
 import 'package:my_quran/core/widgets/surah_starter_finisher.dart';
-import 'package:my_quran/features/home/presentation/views/widgets/custom_ayah_list_view.dart';
 
 import '../../manager/fetch_ayahs_cubit/fetch_ayahs_data_cubit.dart';
-import 'ayah_loading_widget.dart';
+import 'ayah/ayah_loading_widget.dart';
+import 'ayah/custom_ayah_list_view.dart';
 
 class SurahDetailsViewBody extends StatelessWidget {
   const SurahDetailsViewBody({super.key});

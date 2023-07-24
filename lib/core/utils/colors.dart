@@ -12,4 +12,5 @@ class AppColors {
   static const kLightGreyContainerColor = Color.fromARGB(255, 234, 237, 239);
   static const kAyahColor = Color(0xff240F4F);
   static const kPrayerBackground = Color(0xff180B37);
+  static const kDhikrBackground = Color(0xffFCFCFC);
 }

@@ -7,6 +7,7 @@ const String kPoppins = 'Poppins';
 const kSplashView = '/';
 const kHomeView = '/homeView';
 const kSurahDetailsView = '/surahDetailsView';
+const kAdhkarDetailsView = '/AdhkarDetailsView';
 const kPrayerView = '/prayerView';
 List<String> prayerNames = [
   'Fajr',

@@ -86,4 +86,14 @@ abstract class Styles {
       fontWeight: FontWeight.w700,
       fontFamily: kPoppins,
       color: AppColors.kWhiteColor);
+       static final dhikrText = TextStyle(
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w700,
+      fontFamily: kAmiri,
+      color: AppColors.kAyahColor);
+       static final dhikrDesc = TextStyle(
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w500,
+      fontFamily: kAmiri,
+      color: AppColors.kAyahColor);
 }

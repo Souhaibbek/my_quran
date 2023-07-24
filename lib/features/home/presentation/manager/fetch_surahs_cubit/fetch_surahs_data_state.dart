@@ -17,3 +17,5 @@ class FetchSurahsDataSuccess extends FetchSurahsDataState {
 
   FetchSurahsDataSuccess(this.surahs);
 }
+
+class SwitchPageState extends FetchSurahsDataState {}
