@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:my_quran/core/jsons/hisn_almuslim.dart';
 
 import 'adeiah_list_item.dart';
