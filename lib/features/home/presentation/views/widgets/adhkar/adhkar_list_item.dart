@@ -53,9 +53,6 @@ class AdhkarListItem extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        width: 10,
-                      ),
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.only(right: 8.0),
@@ -66,7 +63,7 @@ class AdhkarListItem extends StatelessWidget {
                             maxLines: 1,
                             softWrap: true,
                             textDirection: TextDirection.rtl,
-                            style: Styles.surahTitle.copyWith(fontSize: 15.sp),
+                            style: Styles.surahTitle.copyWith(fontSize: 16.sp),
                           ),
                         ),
                       ),
