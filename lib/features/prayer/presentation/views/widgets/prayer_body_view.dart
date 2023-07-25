@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:my_quran/core/utils/colors.dart';
 import 'package:my_quran/core/utils/constants.dart';
 import 'package:my_quran/core/utils/styles.dart';
+import 'package:my_quran/core/widgets/custom_button.dart';
 import 'package:my_quran/features/prayer/manager/cubit/prayer_time_cubit.dart';
 import 'package:sizer/sizer.dart';
 import 'custom_prayer_appbar.dart';
@@ -96,12 +97,26 @@ class PrayerViewBody extends StatelessWidget {
           );
         } else if (state is PrayerTimeFailure) {
           return Center(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'Error:we can\'t get access to your location,\n\nPlease check if the location services is available in this device and try again.',
-                style: Styles.hintText15,
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Error:we can\'t get access to your location,\n\nPlease check if the location services is available in this device and try again.',
+                    style: Styles.hintText15,
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                CustomButton(
+                  text: 'Try again',
+                  onPressed: () {
+                    BlocProvider.of<PrayerTimeCubit>(context).setPrayerTimes();
+                  },
+                ),
+              ],
             ),
           );
         } else {
