@@ -96,7 +96,13 @@ class PrayerViewBody extends StatelessWidget {
           );
         } else if (state is PrayerTimeFailure) {
           return Center(
-            child: Text(state.errMsg),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Error:we can\'t get access to your location,\n\nPlease check if the location services is available in this device and try again.',
+                style: Styles.hintText15,
+              ),
+            ),
           );
         } else {
           return const CustomPrayerLoading();
