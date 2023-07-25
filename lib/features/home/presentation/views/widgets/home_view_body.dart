@@ -67,7 +67,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       currentPage = 1;
                     });
                   },
-                  text: 'DOAA',
+                  text: 'ADHKARR',
                   radius: 20,
                   height: 37,
                   width: 73,
